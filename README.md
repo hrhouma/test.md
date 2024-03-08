@@ -5,12 +5,14 @@ touch docker-compose index.php Dockerfile
 ```
 
 # Dockerfile
-
+```shell
 FROM php:8.0-apache
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+```
 
 # docker-compose
 
+```shell
 version: '3.8'
 
 services:
@@ -48,9 +50,11 @@ services:
       PMA_HOST: db
     depends_on:
       - db
+```
  
 # index.php
 
+```php
 <?php
 //These are the defined authentication environment in the db service
 
@@ -84,10 +88,12 @@ foreach ($users as $user) {
     echo "<br>";
 }
 ?>
-SCRIPT DE LA BASE DE DONNÉES
+```
+
+# SCRIPT DE LA BASE DE DONNÉES
 
 DROP TABLE IF EXISTS `users`;
-
+```sql
 CREATE TABLE `users` (
   id INT NOT NULL AUTO_INCREMENT,
   username TEXT NOT NULL,
@@ -100,8 +106,8 @@ INSERT INTO `users` (username, password) VALUES
   ('Alice', 'this is my password'),
   ('Job', '12345678');
  
+```
 
-Dockerfile
 
 
  
