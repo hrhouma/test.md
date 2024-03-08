@@ -249,7 +249,7 @@ le mot de passe est MYSQL_ROOT_PASSWORD dans docker-compose.yaml
 mysql> show databases;
 mysql> use MYSQL_DATABASE;
 mysql> show tables;
-mysql> DROP TABLE IF EXISTS `users`;
+mysql> DROP TABLE IF EXISTS `employee`;
 mysql> show databases;
 mysql> create database employee;
 mysql> show databases;
