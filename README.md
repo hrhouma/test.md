@@ -126,9 +126,22 @@ mysql>  INSERT INTO `users` (username, password) VALUES
   ('admin', 'password'),
   ('Alice', 'this is my password'),
   ('Job', '12345678');
-mysql> exit;
+mysql> exit; (quitter mysql)
+```
+```shell
+exit ; (quitter le conteneur bd)
+
 ```
 
-
-
+# Étape 5 - Vérification de phpmyadmin
+```shell
+localhost:8080 ou IP:8080
+username : root
+password: MYSQL_ROOT_PASSWORD
+```
+ 
+# Étape 6 - Vérification du site web
+```shell
+localhost:8000 ou IP:8000
+```
  
