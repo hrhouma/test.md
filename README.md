@@ -247,12 +247,8 @@ le mot de passe est MYSQL_ROOT_PASSWORD dans docker-compose.yaml
 ```
 ```sql
 mysql> show databases;
-mysql> use MYSQL_DATABASE;
-mysql> show tables;
-mysql> DROP TABLE IF EXISTS `employee`;
-mysql> show databases;
+mysql> DROP DATABASE IF EXISTS `employee`;
 mysql> create database employee;
-mysql> show databases;
 mysql> use employee;
 mysql> create table emp_info(emp_id int(11),emp_name varchar(50),emp_username varchar(50),emp_password varchar(50),emp_email varchar(50),emp_phone bigint(20)); 
 mysql> show tables;
@@ -274,6 +270,34 @@ password: MYSQL_ROOT_PASSWORD
 # Étape 6 - Vérification du site web
 ```shell
 localhost:8000 ou IP:8000
+```
+
+# Étape 7 - Insérez un utilisateur
+```shell
+localhost:8000 ou IP:8000
+```
+# Étape 8 - Vérification au niveau de la base de données
+
+```shell
+docker ps
+docker exec -it bd bash
+mysql -u root -p
+le mot de passe est MYSQL_ROOT_PASSWORD dans docker-compose.yaml
+```
+```sql
+mysql> show databases;
+mysql> use employee;
+mysql> show tables;
+mysql> desc emp_info;
+mysql> select * from `emp_info`;
+```
+# VÉRIFIEZ L'EXISTENCE DES UTILISATEURS AJOUTÉS 
+```sql
+mysql> exit; (quitter mysql)
+```
+```shell
+exit ; (quitter le conteneur bd)
+
 ```
 
 # Annexe# 1 pour mysql - commandes utiles
